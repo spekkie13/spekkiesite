@@ -1,0 +1,106 @@
+:root {
+    /* Light Theme */
+    --background-light: #f9f9f9;
+    --border-light: #e0e0e0;
+    --text-light: #333;
+    --text-secondary-light: #666;
+
+    /* Dark Theme */
+    --background-dark: #1e1e1e;
+    --border-dark: #444;
+    --text-dark: #f5f5f5;
+    --text-secondary-dark: #bbb;
+
+    /* Accent Colors */
+    --primary-accent: #ffda00;
+    --highlight: #f8d402;
+    --link-color: #007BFF;
+    --link-hover: #0056b3;
+}
+
+/* Default Theme */
+.project-spotlight {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    gap: 16px;
+    background: var(--background-light);
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 24px;
+    transition: background 0.3s, border 0.3s, color 0.3s;
+}
+
+/* Dark Theme */
+.dark-theme .project-spotlight {
+    background: var(--background-dark);
+    border: 1px solid var(--border-dark);
+}
+
+/* Image */
+.spotlight-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px 0 0 12px;
+}
+
+/* Content */
+.spotlight-content {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Title */
+.spotlight-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text-light);
+    margin-bottom: 8px;
+}
+
+.dark-theme .spotlight-title {
+    color: var(--text-dark);
+}
+
+/* Description */
+.spotlight-description {
+    font-size: 1rem;
+    color: var(--text-secondary-light);
+    margin-bottom: 16px;
+}
+
+.dark-theme .spotlight-description {
+    color: var(--text-secondary-dark);
+}
+
+/* Links */
+.spotlight-link {
+    align-self: flex-start;
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--link-color);
+    text-decoration: none;
+    padding: 8px 16px;
+    border: 1px solid var(--link-color);
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.spotlight-link:hover {
+    background: var(--link-color);
+    color: white;
+}
+
+.dark-theme .spotlight-link {
+    color: var(--highlight);
+    border-color: var(--highlight);
+}
+
+.dark-theme .spotlight-link:hover {
+    background: var(--highlight);
+    color: var(--background-dark);
+}

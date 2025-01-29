@@ -4,14 +4,9 @@ using SpekkieSite.Models;
 
 namespace SpekkieSite.Controllers;
 
-public class HomeController : Controller
+public class HomeController(ILogger<HomeController> logger) : Controller
 {
-    private readonly ILogger<HomeController> _logger;
-
-    public HomeController(ILogger<HomeController> logger)
-    {
-        _logger = logger;
-    }
+    private readonly ILogger<HomeController> _logger = logger;
 
     public IActionResult About()
     {
@@ -36,7 +31,26 @@ public class HomeController : Controller
 
     public IActionResult Projects()
     {
-        return View();
+        List<Project> projects =
+        [
+            new()
+            {
+                Title = "Spekkie's Stream tools",
+                Description = "A bot that allows the user to automate their stream chat, music and much more.",
+                ImageUrl = "https://placehold.co/100x100",
+                ProjectUrl = "https://github.com/yourusername/project-one"
+            },
+
+            new()
+            {
+                Title = "YouTube to MP3 Converter",
+                Description = "A tool to convert a YouTube playlist (or individual songs) to MP3 files",
+                ImageUrl = "https://placehold.co/100x100",
+                ProjectUrl = "https://github.com/yourusername/project-two"
+            }
+        ];
+
+        return View(projects);
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

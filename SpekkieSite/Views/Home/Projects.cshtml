@@ -1,5 +1,12 @@
-﻿@{
+﻿@model List<SpekkieSite.Models.Project>
+
+@{
     ViewBag.Title = "Projects - Spekkie";
 }
 <h1>Projects</h1>
 <p>Explore Spekkie's programming projects and collaborations.</p>
+
+@foreach (Project project in Model)
+{
+    @await Html.PartialAsync(partialViewName: "_ProjectSpotlight", model: project)
+}

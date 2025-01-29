@@ -1,12 +1,74 @@
-body {
-  margin-bottom: 60px;
+:root {
+  /* Light Theme */
+  --background-light: #f0f0f0;
+  --text-light: #141414;
+
+  /* Dark Theme */
+  --background-dark: #141414;
+  --text-dark: #f0f0f0;
+
+  /* Accent Colors */
+  --primary-accent: #ffda00;
+  --secondary-accent: #ffdb00;
+  --highlight: #f8d402;
 }
 
-.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
+/* Default Theme */
+body {
+  margin-bottom: 60px;
+  background-color: var(--background-light);
+  color: var(--text-light);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark Mode */
+.dark-theme {
+  background-color: var(--background-dark);
+  color: var(--text-dark);
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--background-light) !important;
+  color: var(--text-light) !important;
+}
+
+.dark-theme .navbar {
+  background-color: var(--background-dark) !important;
+  color: var(--text-dark) !important;
+}
+
+/* Forms */
+.form-floating > .form-control-plaintext::placeholder,
+.form-floating > .form-control::placeholder {
   color: var(--bs-secondary-color);
   text-align: end;
 }
 
-.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
+.form-floating > .form-control-plaintext:focus::placeholder,
+.form-floating > .form-control:focus::placeholder {
   text-align: start;
+}
+
+/* Buttons */
+button {
+  background-color: var(--primary-accent);
+  border: none;
+  padding: 10px 20px;
+  color: var(--text-dark);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--highlight);
+}
+
+/* Links */
+.nav-link {
+  color: var(--text-light) !important;
+}
+
+.dark-theme .nav-link {
+  color: var(--text-dark) !important;
 }
